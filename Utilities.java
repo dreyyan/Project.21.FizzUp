@@ -83,4 +83,8 @@ public class Utilities {
             System.out.printf("[%s]: ... (no response)\n", speaker);
         }   
     }
+
+    public static void addInventory(String itemName, int itemQuantity, String itemDescription) {
+
+    }
 }
