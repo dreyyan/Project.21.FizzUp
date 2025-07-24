@@ -44,7 +44,7 @@ public class Utilities {
 
             for (int i = 0; i < message.length(); ++i) {
                 System.out.print(message.charAt(i));
-                Thread.sleep((long)(characterDelayS * 1000));
+                Thread.sleep((long)(characterDelayS * 500));
             } System.out.println();
         } catch(InterruptedException e) {
             e.printStackTrace();
@@ -59,7 +59,7 @@ public class Utilities {
             System.out.printf("[%d] %s\n", choiceCounter, choice);
 
             try {
-                Thread.sleep(1000);
+                Thread.sleep(500);
             } catch(InterruptedException e) {
                 e.printStackTrace();
             } choiceCounter++;
@@ -77,14 +77,21 @@ public class Utilities {
     }
 
     public static void handleChoice(String speaker, int choice, String[] responses) {
-        if (choice >= 0 && choice < responses.length) {
-            System.out.printf("[%s]: %s\n", speaker, responses[choice]);
+        if (choice >= 0 && choice <= responses.length) {
+            String response = responses[choice - 1];
+
+            System.out.printf("[%s]: ", speaker);
+            for (int i = 0; i < response.length(); ++i) {
+                System.out.print(response.charAt(i));
+                try {
+                    Thread.sleep((long)(0.1 * 500));
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            System.out.println();
         } else {
-            System.out.printf("[%s]: ... (no response)\n", speaker);
-        }   
-    }
-
-    public static void addInventory(String itemName, int itemQuantity, String itemDescription) {
-
+            System.out.printf("[%s]: ...\n", speaker);
+        }
     }
 }

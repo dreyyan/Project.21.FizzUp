@@ -1,5 +1,15 @@
 {
-    "playerData": {
-        "playerName": "Player"
+    "playerName": "Player",
+    "money": 100,
+    "level": 1,
+    "inventory": {
+
+    },
+    "upgrades": {
+        "Supa": 100,
+        "Speedy": 10,
+        "Lucka": 1,
+        "Mr. Duple": 1,
+        "Brand-o": 1
     }
 }
